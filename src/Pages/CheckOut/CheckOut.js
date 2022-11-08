@@ -41,7 +41,7 @@ const CheckOut = () => {
     return (
         <div className='grid place-content-center'>
             <div className='grid gap-2 grid-cols-1 justify-center md:grid-cols-1 lg:grid-cols-2'>
-                {/* <div>
+                <div>
                     <div className="card card-compact w-96 bg-stone-100 shadow-xl text-stone-600">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">
@@ -52,7 +52,7 @@ const CheckOut = () => {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div>
                     <form onSubmit={handleLeaveReview}>
                         <h2 className="text-2xl">You are about to review: {title}</h2>

@@ -8,10 +8,10 @@ import Services from '../Services/Services';
 const Home = () => {
     return (
         <div>
-            {/* <HomeCarousel></HomeCarousel> */}
+            <HomeCarousel></HomeCarousel>
             <Services></Services>
-            {/* <PromiseSection></PromiseSection>
-            <FAQ></FAQ> */}
+            <PromiseSection></PromiseSection>
+            <FAQ></FAQ>
         </div>
     );
 };
