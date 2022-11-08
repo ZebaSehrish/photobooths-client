@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../assets/login/login.png';
-import img2 from '../../assets/login/camera.jpg'
+import img2 from '../../assets/login/camera.jpg';
 //import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 //import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
