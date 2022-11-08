@@ -23,13 +23,13 @@ const FAQ = () => {
                     </div><br /><br />
                     <div className='pr-52'>
                         <p className='font-medium'>How do I take my own product photographs at home?</p>
-                        <p className='font-light'><small>It’s not easy to take commercial quality product photographs yourself, but if you do – here are a few of the most important things to bear in mind.
+                        <p className='font-light'><small>It’s not easy to take commercial quality product photographs yourself, but if you do – here are a few of the most important things to bear in mind. <br />
 
-                            <p> 1. Even if you take a nice clear photograph of your product on a white paper background, the background will not be 100% white! Place it onto a white website, and little patches of grey will become very obvious. Many websites (including Amazon) require a 100% white background as standard.</p>
+                            <p> 1. Even if you take a nice clear photograph of your product on a white paper background, the background will not be 100% white! Place it onto a white website, and little patches of grey will become very obvious. Many websites (including Amazon) require a 100% white background as standard.</p><br />
 
-                            <p> 2. It’s easier to take a nice lifestyle image yourself than it is to take a professional white background image. Find a nice paper, stone or wooden surface to use as your backdrop, and then prop your set with some relevant items to give interest to the background.</p>
+                            <p> 2. It’s easier to take a nice lifestyle image yourself than it is to take a professional white background image. Find a nice paper, stone or wooden surface to use as your backdrop, and then prop your set with some relevant items to give interest to the background.</p><br />
 
-                            3. Make sure your products are well lit. Try using a side window light, a wide aperture and a tripod! Make sure that your camera is supported on a tripod or table to avoid any camera shake, as using natural light will often require a slow shutter speed.
+                            <p> 3. Make sure your products are well lit. Try using a side window light, a wide aperture and a tripod! Make sure that your camera is supported on a tripod or table to avoid any camera shake, as using natural light will often require a slow shutter speed.</p>
                         </small></p>
                     </div>
                 </div>

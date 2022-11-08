@@ -2,13 +2,16 @@ import React from 'react';
 import FAQ from '../FAQ/FAQ';
 import HomeCarousel from '../HomeCarousel/HomeCarousel';
 import PromiseSection from '../PromiseSection/PromiseSection';
+import Services from '../Services/Services';
+
 
 const Home = () => {
     return (
         <div>
-            <HomeCarousel></HomeCarousel>
-            <PromiseSection></PromiseSection>
-            <FAQ></FAQ>
+            {/* <HomeCarousel></HomeCarousel> */}
+            <Services></Services>
+            {/* <PromiseSection></PromiseSection>
+            <FAQ></FAQ> */}
         </div>
     );
 };

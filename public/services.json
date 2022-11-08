@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "43974746h393499393",
+        "service_id": "04",
+        "title": "Interior Photography",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGq-tQaoKsXDIcE1TMn3VJ5fnhoPtJUeWbpw&usqp=CAU",
+        "price": "15,000",
+        "description": "Whatever your architectural photography brief, these services have the creative and technical expertise to help. I assist with concept creation through to high end post production. This service offer quality, creative and affordable photography for small, medium & large businesses.From kitchen manufacturers to glass partition specialists, my work conveys the quality, craftsmanship and installation of your products.These works cover office buildings, industrial spaces and a number of famous public properties across Bangladesh.Commissions include photography for private individuals and architects as well as editorial for specialist interior designers."
+    },
+    {
+        "_id": "4398403493499393",
+        "service_id": "05",
+        "title": "Food Photography",
+        "img": "https://i.ibb.co/ydCbDN3/5555.jpghttps://iso.500px.com/wp-content/uploads/2020/02/Sushi-and-sashimi-variety-on-rustic-background-By-Alena-Haurylik-2.jpeg",
+        "price": "8,000",
+        "description": "From fully styled advertising food and drink shoots, to packaging, packshots and point of sale material, food photography is one of the demanding specialisms. I can help you produce mouth watering images, for print, advertising & online as well as simple product & packaging packshots.Most of my product based food shoots will be done at my studio. For jobs that need kitchens I have a number of options to work from including my home, a variety of professional kitchens and hire studios. Please contact to know more detail about the nature of your project so that the best recommendations can be referred for the job."
+    },
+    {
+        "_id": "03498366393499393",
+        "service_id": "01",
+        "title": "Fashion Photography",
+        "img": "https://alpha360.co/uploads/portfolio_photo//066f051f1b339f1ef007695f65442e88.jpg",
+        "price": "12,000",
+        "description": "This service specializes in photography for both printed and online fashion catalogues, websites & advertising materials. Whether it be a fashion shoot with models on location, look books or flat lay clothing shots,all can be done. I shoot both standard and invisible mannequins, hanging, and white background cutouts. This service offer fast turnarounds, colour matching, retouching and clipping paths as standard."
+    },
+    {
+        "_id": "494575484583393",
+        "service_id": "02",
+        "title": "Wedding Photography",
+        "img": "https://alpha360.co/uploads/portfolio_photo//066f051f1b339f1ef007695f65442e88.jpg",
+        "price": "25,000",
+        "description": "Looking for a wedding photographer? I approach weddings in a documentary and artistic way, trying to tell the story of your day honestly and unobtrusively. Images are warm, romantic, and intimate. The images will make you try to look beyond the glitz and glamour of a wedding, and photograph the emotions, moments and souls instead.This service includes indoor,outdoor and even destination wedding shoots according to your requirements. Every places are handpicked by our top designers.I hope to give you images that make you feel, not just see. "
+    },
+    {
+        "_id": "9462692027793",
+        "service_id": "03",
+        "title": "Commercial Photography",
+        "img": "https://theisozone.com/wp-content/uploads/2021/03/360%C2%B0-Product-Photography.jpg",
+        "price": "20,000",
+        "description": "High quality commercial photography is the key to making your business stand out for all the right reasons. Whether you’re launching a new website and require unique personnel shots or need a photographer for your PR event, I can supply qualified and expertise on how to manage your projects. I regularly visit new office buildings, photograph interiors and often take on complementary promotional video projects supporting commercial businesses.Quality photographs translate to quality products and services, so if you want to make a good impression on your customers, professional commercial photos are a must."
+    },
+    {
+        "_id": "17248282829733",
+        "service_id": "06",
+        "title": "Aerial Photography",
+        "img": "https://i0.wp.com/epicaerialbd.com/wp-content/uploads/2015/08/DJI_0050.jpg?fit=1501%2C843&ssl=1",
+        "price": "30,000",
+        "description": "Let me capture breathtaking aerial imagery to showcase the best your property has to offer, or have us collect, inspect, and analyze critical data for your enterprise. I offer nationwide drone photography services and provide professional consistency and reliability for your events. Our aim is simple, to capture creative content beyond what our competitors can offer, while delivering the highest level of service. My team of professional organizers and drone pilots will provide you with stunning high-resolution images and videos suitable for both print and digital media. "
+    }
+]
