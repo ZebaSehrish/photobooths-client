@@ -6,8 +6,9 @@ const HeaderNav = () => {
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/services'>Services</Link></li>
+        <li><Link to='/signup'>Sign Up</Link></li>
+        <li><Link to='/login'>Log in</Link></li>
     </>
 
     return (
