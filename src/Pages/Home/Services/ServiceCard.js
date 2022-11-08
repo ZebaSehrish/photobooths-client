@@ -14,12 +14,13 @@ const ServiceCard = ({ service }) => {
                         :
                         <p>description</p>
                 }</p>
-                <p className="text-stone-700 font-medium">Starting From BDT.{price}</p>
-                <div className="card-actions justify-end">
+                <div className="card-actions justify-between">
+                    <p className="text-stone-700 font-medium">Starting From BDT.{price}</p>
                     <button className="btn btn-ghost btn-outline">View Details</button>
                 </div>
             </div>
         </div>
+
     );
 };
 

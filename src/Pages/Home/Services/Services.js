@@ -10,7 +10,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div>
+        <div className='grid place-content-center'>
             <div>
                 <p className='text-2xl text-center font-bold text-stone-600'>Services We Provide</p>
             </div>
