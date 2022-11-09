@@ -3,7 +3,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ReviewRow from './ReviewRow';
 
 const CurrentUserReviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect(() => {
