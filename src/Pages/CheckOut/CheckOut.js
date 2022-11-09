@@ -19,7 +19,8 @@ const CheckOut = () => {
     const handleWriteReview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.firstName.value} ${form.lastName.value}`;
+        const name = user?.displayName || 'unregistered';
+        const photoURL = user?.photoURL || '';
         const email = user?.email || 'unregistered';
         const message = form.message.value;
         const order = {
@@ -28,6 +29,7 @@ const CheckOut = () => {
             price,
             customer: name,
             email,
+            photoURL,
             message
         }
         fetch('http://localhost:5000/reviews', {
@@ -75,15 +77,17 @@ const CheckOut = () => {
                             ></Review>)
                         }
                     </div>
-                    {user?.email ?
+                    {user ?
                         <form onSubmit={handleWriteReview}>
-                            <h2 className="text-2xl">Add your review on {title}</h2>
-                            <div className='grid grid-cols-2 lg:grid-cols-2 gap-4'>
-                                <input name="firstName" type="text" placeholder="First Name" className="input input-ghost w-full  input-bordered" />
-                                <input name="lastName" type="text" placeholder="Last Name" className="input input-ghost w-full  input-bordered" />
-                                <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
+                            <div className='flex gap-5 p-3 justify-center font-semibold'>
+                                {/* <div className='btn btn-ghost btn-circle avatar'>
+                                    <img className='w-8 rounded-full' src={user.photoURL} alt="" />
+                                </div> */}
+
+                                <p name='name'>{user.displayName}</p>
+
                             </div>
-                            <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder="Your Message" required></textarea>
+                            <textarea name="message" className="textarea textarea-bordered h-24 w-full" placeholder={`Add your review on ${title}`} required></textarea>
 
                             <input className='btn btn-ghost btn-outline w-full text-stone-600 font-bold' type="submit" value="Confirm Review" />
 
@@ -100,7 +104,7 @@ const CheckOut = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
