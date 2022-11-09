@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/login.png';
 import img2 from '../../assets/login/camera.jpg';
+import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 //import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { login } = useContext(AuthContext);
+    const { login, googleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -32,6 +33,18 @@ const Login = () => {
                 console.error(error);
                 setError(error.message);
             })
+
+        const handleGoogleSignIn = () => {
+            googleSignIn()
+                .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                    navigate(from, { replace: true })
+                })
+                .catch(error => console.error(error))
+        }
+
+
     }
     // const currentUser = {
     //     email: user.email
@@ -84,6 +97,11 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <input className="btn btn-ghost btn-outline text-stone-600 font-bold" type="submit" value="Login" />
+                                <p className='text-red-500'> {error}</p>
+                            </div>
+                            <div className="form-control mt-6">
+
+                                <button type='submit' className="btn btn-primary text-stone-100 font-bold" > Sign in with Google <FaGoogle className='ml-2'></FaGoogle></button>
                                 <p className='text-red-500'> {error}</p>
                             </div>
                         </form>

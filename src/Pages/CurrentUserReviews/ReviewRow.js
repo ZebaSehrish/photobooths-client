@@ -2,7 +2,7 @@ import React from 'react';
 import { TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
 
 const ReviewRow = ({ myReview, handleDelete }) => {
-    const { _id, customer, serviceName, price, email, message } = myReview;
+    const { _id, customer, serviceName, price, email, message, photoURL } = myReview;
 
     return (
         <tr>
@@ -17,7 +17,7 @@ const ReviewRow = ({ myReview, handleDelete }) => {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                            <img src={photoURL} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
