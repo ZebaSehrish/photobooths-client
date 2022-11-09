@@ -15,7 +15,6 @@ const Home = () => {
                 <div className='flex justify-center'>
                     <Link to='/services'><button className='btn btn-ghost btn-outline flex justify-center text-stone-100'>See All</button></Link>
                 </div>
-
             </div>
             <PromiseSection></PromiseSection>
             <FAQ></FAQ>

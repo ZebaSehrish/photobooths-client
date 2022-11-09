@@ -23,7 +23,7 @@ const CurrentUserReviews = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        const remaining = myReviews.filter(odr => odr._id !== id);
+                        const remaining = myReviews.filter(rev => rev._id !== id);
                         setMyReviews(remaining);
                     }
                 })

@@ -52,10 +52,11 @@ const CheckOut = () => {
     }
     return (
         <div className='grid place-content-center'>
-            <div className='checkout-container '>
+            <h2 className='pt-5 text-center text-stone-600 text-4xl font-bold font-serif'>Details of {title}</h2>
+            <div className='checkout-container text-stone-600'>
                 <div>
                     <p className='text-center text-stone-400 text-2xl font-semibold'>Get Full Details here</p>
-                    <div className="card card-compact w-96 bg-stone-100 shadow-md text-stone-600 rounded-md">
+                    <div className="card card-compact w-96 bg-stone-100 shadow-md text-stone-600 rounded-md card-container ">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{title}</h2>

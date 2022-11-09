@@ -4,3 +4,26 @@
     gap: 100px;
     margin: 30px;
 }
+
+/* medium device */
+@media screen and (min-width: 577px) and (max-width: 1050px) {
+    .checkout-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* small device */
+@media screen and (max-width: 576px) {
+    .checkout-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
