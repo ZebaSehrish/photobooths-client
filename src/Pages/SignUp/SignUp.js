@@ -1,26 +1,53 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/login.png';
 import img2 from '../../assets/login/camera.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [nameError, setNameError] = useState('');
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const displayName = form.displayName.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
+
+        if (!/^[a-zA-Z]+ [a-zA-Z]+$/.test(displayName)) {
+            setNameError('Please add first and last name');
+            return;
+        }
+        setNameError('');
 
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
+                form.reset();
+                navigate('/login');
+                handleUpdateUserProfile(displayName, photoURL);
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.error(err);
+                setError(err.message);
+            });
 
+    }
+    const handleUpdateUserProfile = (displayName, photoURL) => {
+        const profile = {
+            displayName: displayName,
+            photoURL: photoURL
+        }
+
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch((error => console.error(error)));
     }
 
     return (
@@ -37,7 +64,14 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text text-stone-600 font-medium">Your Name</span>
                             </label>
+                            <p className='text-red-600'>{nameError}</p>
                             <input type="text" name='displayName' placeholder="name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">photoURL:</span>
+                            </label>
+                            <input type="text" name='photoURL' placeholder="Your Photo URL" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -56,6 +90,7 @@ const SignUp = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-ghost btn-outline text-stone-600 font-bold" type="submit" value="Sign Up" />
+                            <p className='text-red-600'>{error}</p>
                         </div>
                     </form>
                     <p className='text-center '>Already a registered member?<Link className='text-amber-800 text-xl font-bold mr-2' to="/login"> Log in</Link> </p>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/icons/header-icon.jpg';
+import icon from '../../../assets/login/login.png';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const HeaderNav = () => {
@@ -21,12 +22,14 @@ const HeaderNav = () => {
                 <li><Link to='/myReviews'>My Reviews</Link></li>
                 <li><Link to='/addServices'>Add services</Link></li>
                 <li><button onClick={handleLogOut}>Log Out</button></li>
+                <li><Link className='font-semibold text-md text-stone-800'>Hello! {user.displayName}</Link></li>
             </>
             :
             <li><Link to='/login'>Log in</Link></li>
         }
 
     </>
+
 
     return (
         <div className="navbar h-20 bg-stone-300">
@@ -37,7 +40,34 @@ const HeaderNav = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {menuItems}
-
+                        <div className="dropdown dropdown-end">
+                            {
+                                user ?
+                                    <div className="tooltip tooltip-left tooltip-info" data-tip={user.displayName}>
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                            <div className=" rounded-full">
+                                                {
+                                                    user?.photoURL ?
+                                                        <img className='w-10' src={user.photoURL} alt='' />
+                                                        :
+                                                        <img className='w-10' src={icon} alt="" />
+                                                }
+                                            </div>
+                                        </label>
+                                    </div>
+                                    :
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                        <div className=" rounded-full">
+                                            {
+                                                user?.photoURL ?
+                                                    <img className='w-10' src={user.photoURL} alt='' />
+                                                    :
+                                                    <img className='w-10' src={icon} alt="" />
+                                            }
+                                        </div>
+                                    </label>
+                            }
+                        </div>
                     </ul>
                 </div>
                 <Link to='/' className="btn btn-ghost normal-case text-xl">
@@ -47,12 +77,72 @@ const HeaderNav = () => {
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItems}
+                    <div className="dropdown dropdown-end">
+                        {
+                            user ?
+                                <div className="tooltip tooltip-left tooltip-info" data-tip={user.displayName}>
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                        <div className=" rounded-full">
+                                            {
+                                                user?.photoURL ?
+                                                    <img className='w-10' src={user.photoURL} alt='' />
+                                                    :
+                                                    <img className='w-6' src={icon} alt="" />
+                                            }
+                                        </div>
+                                    </label>
+                                </div>
+                                :
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                    <div className=" rounded-full">
+                                        {
+                                            user?.photoURL ?
+                                                <img className='w-10' src={user.photoURL} alt='' />
+                                                :
+                                                <img className='w-6' src={icon} alt="" />
+                                        }
+                                    </div>
+                                </label>
+                        }
+                    </div>
                 </ul>
             </div>
             {/* <div className="navbar-end">
 
                 <a className="btn">Get started</a>
             </div> */}
+            <div className="flex-none">
+                <div className="dropdown dropdown-end">
+                </div>
+                {/* <div className="dropdown dropdown-end">
+                    {
+                        user ?
+                            <div className="tooltip tooltip-left tooltip-info" data-tip={user.displayName}>
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                    <div className=" rounded-full">
+                                        {
+                                            user?.photoURL ?
+                                                <img className='w-10' src={user.photoURL} alt='' />
+                                                :
+                                                <img className='w-10' src={icon} alt="" />
+                                        }
+                                    </div>
+                                </label>
+                            </div>
+                            :
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                                <div className=" rounded-full">
+                                    {
+                                        user?.photoURL ?
+                                            <img className='w-10' src={user.photoURL} alt='' />
+                                            :
+                                            <img className='w-10' src={icon} alt="" />
+                                    }
+                                </div>
+                            </label>
+                    }
+                </div> */}
+            </div>
         </div>
     );
 };

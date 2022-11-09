@@ -31,6 +31,7 @@ const AddServices = () => {
                 console.log(data)
                 if (data.acknowledged) {
                     alert('Review recorded successfully')
+
                     form.reset();
                 }
             })

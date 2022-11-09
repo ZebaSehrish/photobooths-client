@@ -10,7 +10,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className='grid place-content-center mb-20 py-10 bg-stone-700'>
+        <div className='grid place-content-center py-10 bg-stone-700'>
             <div>
                 <p className='mb-5 text-2xl text-center font-bold text-stone-100'>Services We Provide</p>
             </div>

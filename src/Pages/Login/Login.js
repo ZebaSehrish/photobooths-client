@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/login.png';
 import img2 from '../../assets/login/camera.jpg';
@@ -6,6 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 //import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
+    const [error, setError] = useState('');
     const { login } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -22,10 +23,15 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                setError('');
                 navigate(from, { replace: true });
 
             })
-            .catch(err => console.log(err));
+            .catch(error => {
+                console.error(error);
+                setError(error.message);
+            })
     }
     // const currentUser = {
     //     email: user.email
