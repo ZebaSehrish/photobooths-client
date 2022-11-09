@@ -5,6 +5,7 @@ const Review = ({ review }) => {
     const { customer, email, message } = review;
     return (
         <div>
+
             <div className='flex gap-5 p-3'>
                 <div>
                     <img className='w-12 rounded-full' src={img} alt="" />

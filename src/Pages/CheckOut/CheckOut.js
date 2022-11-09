@@ -51,7 +51,8 @@ const CheckOut = () => {
         <div className='grid place-content-center'>
             <div className='checkout-container '>
                 <div>
-                    <div className="card card-compact w-96 bg-stone-100 shadow-xl text-stone-600">
+                    <p className='text-center text-stone-400 text-2xl font-semibold'>Get Full Details here</p>
+                    <div className="card card-compact w-96 bg-stone-100 shadow-md text-stone-600 rounded-md">
                         <figure><img src={img} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{title}</h2>
@@ -65,6 +66,7 @@ const CheckOut = () => {
 
                 <div>
                     <div>
+                        <p className='text-center text-stone-400 text-2xl font-semibold'>Reviews</p>
                         {
                             reviews.map(review => <Review
                                 key={review._id}
