@@ -4,7 +4,13 @@ import logo from '../../../assets/icons/header-icon.jpg';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const HeaderNav = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch();
+    }
 
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
@@ -14,7 +20,7 @@ const HeaderNav = () => {
             <>
                 <li><Link to='/myReviews'>My Reviews</Link></li>
                 <li><Link to='/addServices'>Add services</Link></li>
-                <li><Link to='/logout'>Log Out</Link></li>
+                <li><button onClick={handleLogOut}>Log Out</button></li>
             </>
             :
             <li><Link to='/login'>Log in</Link></li>

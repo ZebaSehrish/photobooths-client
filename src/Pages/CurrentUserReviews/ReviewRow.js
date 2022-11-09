@@ -1,5 +1,5 @@
 import React from 'react';
-import { TrashIcon } from '@heroicons/react/24/solid';
+import { TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
 
 const ReviewRow = ({ myReview, handleDelete }) => {
     const { _id, customer, serviceName, price, email, message } = myReview;
@@ -7,9 +7,10 @@ const ReviewRow = ({ myReview, handleDelete }) => {
     return (
         <tr>
             <th>
-                <label>
+                <label className='flex gap-2'>
+                    <button className='btn btn-outline btn-circle'><PencilSquareIcon className='w-5'></PencilSquareIcon>
+                    </button>
                     <button onClick={() => { handleDelete(_id) }} className='btn btn-outline btn-circle'><TrashIcon className='w-5'></TrashIcon></button>
-
                 </label>
             </th>
             <td>

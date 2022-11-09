@@ -32,15 +32,12 @@ const CurrentUserReviews = () => {
 
     return (
         <div>
-            <h2>You Have {myReviews.length} Reviews</h2>
+            <h2 className='text-center text-stone-400 text-2xl font-semibold'>You Have {myReviews.length} Reviews</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>
                         <tr>
                             <th>
-                                {/* <label>
-                                    <input type="checkbox" className="checkbox" />
-                                </label> */}
                             </th>
                             <th>Name and Contact details</th>
                             <th>Product Details</th>
@@ -60,6 +57,7 @@ const CurrentUserReviews = () => {
                 </table>
             </div>
         </div>
+
     );
 };
 
