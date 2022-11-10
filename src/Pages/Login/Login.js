@@ -33,7 +33,7 @@ const Login = () => {
                 console.log(currentUser);
 
                 //get jwt token
-                fetch(`https://photobooths-server-zebasehrish.vercel.app/jwt`, {
+                fetch(`https://photobooths-server.vercel.app/jwt`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

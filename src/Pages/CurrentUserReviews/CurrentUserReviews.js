@@ -11,7 +11,7 @@ const CurrentUserReviews = () => {
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`https://photobooths-server-zebasehrish.vercel.app/reviews?email=${user?.email}`, {
+        fetch(`https://photobooths-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('photoBooths-token')}`
             }
@@ -28,7 +28,7 @@ const CurrentUserReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure. you want to cancel this order?')
         if (proceed) {
-            fetch(`https://photobooths-server-zebasehrish.vercel.app/reviews/${id}`, {
+            fetch(`https://photobooths-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('photoBooths-token')}`

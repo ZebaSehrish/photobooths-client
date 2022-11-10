@@ -23,7 +23,7 @@ const AddServices = () => {
             ratings,
             description
         }
-        fetch('https://photobooths-server-zebasehrish.vercel.app/services', {
+        fetch('https://photobooths-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

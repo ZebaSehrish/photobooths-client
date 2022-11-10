@@ -12,7 +12,7 @@ const Update = () => {
 
     const handleUpdateReview = event => {
         event.preventDefault();
-        fetch(`https://photobooths-server-zebasehrish.vercel.app/reviews/${_id}`, {
+        fetch(`https://photobooths-server.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

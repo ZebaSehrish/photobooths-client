@@ -6,6 +6,7 @@ const Footer = () => {
         <footer className="footer footer-center p-10 bg-stone-400 text-primary-content">
             <div>
                 <img className='w-16 rounded-full' src={logo} alt="" />
+                <p>Sehrish Zeba -Founder, PhotoBooths</p>
                 <p className="font-bold">
                     PhotoBooths Ltd. <br />Providing reliable photography service since 2010
                 </p>
