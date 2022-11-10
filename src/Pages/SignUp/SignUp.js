@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/login.png';
 import img2 from '../../assets/login/camera.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
@@ -31,7 +31,7 @@ const SignUp = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-                navigate('/login');
+                navigate('/login')
                 handleUpdateUserProfile(displayName, photoURL);
             })
             .catch(err => {

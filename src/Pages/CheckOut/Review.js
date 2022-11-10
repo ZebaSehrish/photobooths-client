@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import img from '../../assets/login/login.png';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { notify } from '../../Toast/Toast';
 
 const Review = ({ review }) => {
     const { user } = useContext(AuthContext);
     const { customer, email, message, photoURL } = review;
+
     return (
         <div>
 

@@ -60,7 +60,7 @@ const AddServices = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
-                        <span className="label-text">Image Url:</span>
+                        <span className="label-text">Image URL:</span>
                     </label>
                     <input name='img' type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" required />
                 </div>

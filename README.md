@@ -1,8 +1,8 @@
-# Site name: PhotoBooths - A site based on quality photography services by an experienced and talented photographer. Users can see the details of the services and review them by signing in to the system.
+# Site name: PhotoBooths 
 
 ## Website Link
 
-
+### - This site based on quality photography services by an experienced and talented photographer. Users can see the details of the services and review them by signing in to the system.
 
 ### This Website is created using create-react-app, firebase and tailwind-css.The database used for the site is MongoDB.
 
