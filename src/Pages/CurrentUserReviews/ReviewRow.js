@@ -9,8 +9,10 @@ const ReviewRow = ({ myReview, handleDelete }) => {
         <tr>
             <th>
                 <label className='flex gap-2'>
-                    <Link to={`/update/${_id}`} className='btn btn-outline btn-circle'><PencilSquareIcon className='w-5'></PencilSquareIcon>
-                    </Link>
+                    <button
+                        className='btn btn-outline btn-circle'>  <Link to={`/update/${_id}`} ><PencilSquareIcon className='w-5'></PencilSquareIcon>    </Link>
+                    </button>
+
                     <button onClick={() => { handleDelete(_id) }} className='btn btn-outline btn-circle'><TrashIcon className='w-5'></TrashIcon></button>
                 </label>
             </th>

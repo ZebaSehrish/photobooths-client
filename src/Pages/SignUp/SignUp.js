@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import img from '../../assets/login/login.png';
 import img2 from '../../assets/login/camera.jpg';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
     const [error, setError] = useState('');
@@ -52,6 +53,7 @@ const SignUp = () => {
 
     return (
         <div>
+            <Helmet><title>PhotoBooths-Sign Up</title></Helmet>
             <h2 className='pt-5 text-center text-stone-700 text-4xl font-bold font-serif'>Sign in to the system</h2>
             <div className="hero w-full my-20">
                 <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">

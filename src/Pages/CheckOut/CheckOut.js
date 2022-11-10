@@ -2,8 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { ArrowSmallRightIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 import Review from './Review';
 import './CheckOut.css';
+import { notify } from '../../Toast/Toast';
 
 const CheckOut = () => {
     const { _id, title, price, img, description } = useLoaderData();
@@ -43,7 +47,7 @@ const CheckOut = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review recorded successfully')
+                    notify();
                     form.reset();
                 }
             })
@@ -52,6 +56,7 @@ const CheckOut = () => {
     }
     return (
         <div className='grid place-content-center'>
+            <Helmet><title>PhotoBooths-{title}</title></Helmet>
             <h2 className='pt-5 text-center text-stone-600 text-4xl font-bold font-serif'>Details of {title}</h2>
             <div className='checkout-container text-stone-600'>
                 <div>
@@ -105,6 +110,16 @@ const CheckOut = () => {
 
                 </div>
             </div>
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark" />
         </div >
     );
 };

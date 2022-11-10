@@ -5,6 +5,7 @@ import img2 from '../../assets/login/camera.jpg';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import { Helmet } from 'react-helmet';
 //import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -52,7 +53,7 @@ const Login = () => {
 
     return (
         <div>
-
+            <Helmet><title>PhotoBooths-Login</title></Helmet>
             <h2 className='pt-5 text-center text-stone-700 text-4xl font-bold font-serif'>Log in to the system</h2>
             <div className="hero w-full my-20">
                 <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">

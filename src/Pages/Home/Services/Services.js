@@ -1,17 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
     // const [services, setServices] = useState([]);
     const { services, count } = useLoaderData();
-    const homePage = 3;
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/services')
-    //         .then(res => res.json())
-    //         .then(data => setServices(data))
-    // }, [])
-
     return (
         <div className='grid place-content-center py-10 bg-stone-700'>
             <div>

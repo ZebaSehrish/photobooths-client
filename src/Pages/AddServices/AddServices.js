@@ -1,4 +1,8 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from '../../Toast/Toast';
 
 const AddServices = () => {
 
@@ -30,8 +34,7 @@ const AddServices = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review recorded successfully')
-
+                    notify();
                     form.reset();
                 }
             })
@@ -40,6 +43,7 @@ const AddServices = () => {
 
     return (
         <form onSubmit={handleAddService} className='grid place-content-center my-10'>
+            <Helmet><title>PhotoBooths-Add Services</title></Helmet>
             <p className='text-center text-stone-600 text-4xl font-bold'>Add a Service</p>
             <div className='grid gap-3 mb-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 '>
                 <div className="form-control w-full max-w-xs">
@@ -76,6 +80,16 @@ const AddServices = () => {
             <textarea name="description" className="textarea textarea-bordered h-24 w-full mb-3" placeholder="description about the service" required></textarea>
 
             <input className='btn btn-ghost btn-outline w-full text-stone-600 font-bold' type="submit" value="Add" />
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark" />
         </form>
 
     );

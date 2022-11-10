@@ -1,5 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { deleteNotify, notify } from '../../Toast/Toast';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 import ReviewRow from './ReviewRow';
 
 const CurrentUserReviews = () => {
@@ -22,7 +26,7 @@ const CurrentUserReviews = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        deleteNotify();
                         const remaining = myReviews.filter(rev => rev._id !== id);
                         setMyReviews(remaining);
                     }
@@ -32,6 +36,7 @@ const CurrentUserReviews = () => {
 
     return (
         <div>
+            <Helmet> <title>PhotoBooths-My Reviews</title></Helmet>
             <h2 className='text-center text-stone-400 text-2xl font-semibold'>You Have {myReviews.length} Reviews</h2>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -56,6 +61,16 @@ const CurrentUserReviews = () => {
                     </tbody>
                 </table>
             </div>
+            <ToastContainer position="top-center"
+                autoClose={5000}
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark" />
         </div>
 
     );

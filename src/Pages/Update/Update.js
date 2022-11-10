@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { notify } from '../../Toast/Toast';
 
 const Update = () => {
+
     const storedUser = useLoaderData();
     const { _id, serviceName, price, message } = storedUser;
     const [storedReview, setStoredReview] = useState(storedUser);
@@ -19,7 +23,7 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    alert('review updated');
+                    notify();
                 }
                 console.log(data);
             })
@@ -55,6 +59,16 @@ const Update = () => {
                 <textarea onChange={handleInputChange} name="message" className="textarea textarea-bordered h-24 w-full mb-3" defaultValue={message} required></textarea>
 
                 <input className='btn btn-ghost btn-outline w-full text-stone-600 font-bold' type="submit" value="Update" />
+                <ToastContainer position="top-center"
+                    autoClose={5000}
+                    hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark" />
             </form>
         </div>
     );

@@ -4,11 +4,12 @@ import FAQ from '../FAQ/FAQ';
 import HomeCarousel from '../HomeCarousel/HomeCarousel';
 import PromiseSection from '../PromiseSection/PromiseSection';
 import Services from '../Services/Services';
-
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <div>
+            <Helmet> <title>PhotoBooths-Home</title></Helmet>
             <HomeCarousel></HomeCarousel>
             <div className='bg-stone-700 py-5 mb-20 '>
                 <Services></Services>
