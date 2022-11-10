@@ -16,7 +16,8 @@ const Update = () => {
         fetch(`http://localhost:5000/reviews/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('photoBooths-token')}`
             },
             body: JSON.stringify(storedReview)
         })

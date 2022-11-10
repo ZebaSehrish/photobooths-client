@@ -7,20 +7,32 @@ import { Helmet } from 'react-helmet';
 import ReviewRow from './ReviewRow';
 
 const CurrentUserReviews = () => {
-    const { user, loading } = useContext(AuthContext);
+    const { user, loading, logOut } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('photoBooths-token')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                return res.json();
+            })
             .then(data => setMyReviews(data))
-    }, [user?.email])
+    }, [user?.email], logOut)
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure. you want to cancel this order?')
         if (proceed) {
             fetch(`http://localhost:5000/reviews/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('photoBooths-token')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -44,8 +56,8 @@ const CurrentUserReviews = () => {
                         <tr>
                             <th>
                             </th>
-                            <th>Name and Contact details</th>
-                            <th>Product Details</th>
+                            <th>Name</th>
+                            <th> Service Name</th>
                             <th>Email</th>
                             <th>Reviews</th>
                         </tr>
