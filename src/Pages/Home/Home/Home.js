@@ -10,7 +10,7 @@ import ServiceCard from '../Services/ServiceCard';
 const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/homeServices')
+        fetch('https://photobooths-server-zebasehrish.vercel.app/homeServices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

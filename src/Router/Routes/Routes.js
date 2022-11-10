@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
-                loader: () => fetch('http://localhost:5000/services')
+                loader: () => fetch('https://photobooths-server-zebasehrish.vercel.app/services')
             },
             {
                 path: '/addServices',
@@ -36,12 +36,12 @@ export const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader: ({ params }) => fetch(`https://photobooths-server-zebasehrish.vercel.app/reviews/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <CheckOut></CheckOut>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://photobooths-server-zebasehrish.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
