@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrashIcon, PencilSquareIcon } from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 
 const ReviewRow = ({ myReview, handleDelete }) => {
     const { _id, customer, serviceName, price, email, message, photoURL } = myReview;
@@ -8,8 +9,8 @@ const ReviewRow = ({ myReview, handleDelete }) => {
         <tr>
             <th>
                 <label className='flex gap-2'>
-                    <button className='btn btn-outline btn-circle'><PencilSquareIcon className='w-5'></PencilSquareIcon>
-                    </button>
+                    <Link to={`/update/${_id}`} className='btn btn-outline btn-circle'><PencilSquareIcon className='w-5'></PencilSquareIcon>
+                    </Link>
                     <button onClick={() => { handleDelete(_id) }} className='btn btn-outline btn-circle'><TrashIcon className='w-5'></TrashIcon></button>
                 </label>
             </th>
